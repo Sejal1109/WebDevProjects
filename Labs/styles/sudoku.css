@@ -1,10 +1,15 @@
 #board{
-    margin: auto;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 20px;
+    color: rgb(65, 65, 65);
+    
 }
 
 #palette{
     margin: auto;
+    color: rgb(65, 65, 65);
 }
 
 #undo{
@@ -15,34 +20,30 @@
 }
 
 td{
-    height: 20px;
-    width: 20px;
+    height: 50px;
+    width: 50px;
 }
 
 th{
-    height: 20px;
-    width: 20px;
+    height: 50px;
+    width: 50px;
 }
 
-#board, th, td{
+#board, td{
     text-align: center;
+    min-width: 550;
     padding: 10px;
     font-weight: bold;
-    font-size: 20px;
     border: 0.5px solid gray;
     border-collapse: collapse;
+    
 }
 
-
-
-#palette, th, td{
+#palette, th{
     text-align: center;
     padding: 10px;
     border: 0.5px solid black;
     border-collapse: collapse;
-}
-#palette{
-    color: dimgray;
 }
 
 #board:hover td:hover{
@@ -75,4 +76,27 @@ th{
 
 .error{
     background-color: #f76c5e;
+}
+
+#high_scores{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headingDiv{
+    border-bottom: 2px solid rgb(56, 56, 56);
+}
+
+#high_scores td{
+    border: none;
+    padding: 20px;
+    text-align: center;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+#high_scores tr:first-child td{
+    font-weight: bold;
+    font-size: large;
 }
