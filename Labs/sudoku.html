@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Sudoku</title>
-  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   <link href="styles/sudoku.css" rel="stylesheet">
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
+<script type ="text/javascript" src="script/sudoku.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,130 +34,131 @@
     <div class="body">
       <table id="board">
         <tr class = "topRow">
-          <td class="leftCol"> </td>
-          <td>1</td>
-          <td class="boldCol"> </td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
           <td> </td>
-          <td>9</td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
 
         <tr>
-          <td class="leftCol"> </td>
-          <td> </td>
-          <td class="boldCol">4</td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
-          <td>2</td>
           <td> </td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
 
         <tr class = "boldRow">
-          <td class="leftCol"> </td>
-          <td> </td>
-          <td class="boldCol">8</td>
           <td> </td>
           <td> </td>
-          <td class="boldCol">5</td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
 
         <tr>
-          <td class="leftCol"> </td>
-          <td> </td>
-          <td class="boldCol"> </td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
           <td> </td>
-          <td>3</td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
 
         <tr>
-          <td class="leftCol">2</td>
           <td> </td>
-          <td class="boldCol"> </td>
           <td> </td>
-          <td>4</td>
-          <td class="boldCol"> </td>
-          <td>1</td>
           <td> </td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
 
         <tr class = "boldRow">
-          <td class="leftCol"> </td>
-          <td> </td>
-          <td class="boldCol"> </td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
 
         <tr>
-          <td class="leftCol"> </td>
           <td> </td>
-          <td class="boldCol">1</td>
-          <td>8</td>
           <td> </td>
-          <td class="boldCol"> </td>
-          <td>6</td>
           <td> </td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
 
         <tr>
-          <td class="leftCol"> </td>
-          <td>3</td>
-          <td class="boldCol"> </td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
           <td> </td>
-          <td>8</td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
 
         <tr class = "boldRow">
-          <td class="leftCol"> </td>
-          <td> </td>
-          <td class="boldCol">6</td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
           <td> </td>
           <td> </td>
-          <td class="boldCol"> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
         </tr>
       </table>
 
       <table id="palette">
         <tr>
-          <th scope="row"> 1 </th>
-          <th scope="row"> 2 </th>
-          <th scope="row"> 3 </th>
-          <th scope="row"> 4 </th>
-          <th scope="row"> 5 </th>
-          <th scope="row"> 6 </th>
-          <th scope="row"> 7 </th>
-          <th scope="row"> 8 </th>
-          <th scope="row"> 9 </th>
+          <th scope="row">1</th>
+          <th scope="row">2</th>
+          <th scope="row">3</th>
+          <th scope="row">4</th>
+          <th scope="row">5</th>
+          <th scope="row">6</th>
+          <th scope="row">7</th>
+          <th scope="row">8</th>
+          <th scope="row">9</th>
           <th scope="row"> <img id="undo" src="images/undo.png"> </th>
         </tr>
       </table>
+      <script type ="text/javascript" src="script/sudoku.js"></script>
     </div>
   </section>
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6dbecfa9f9965413',m:'hvVRP1bB09nJuziP5k0_SJ6YqQUW9BhDMvdxHlCpZwU-1644595447-0-AX5vK4fC1W4iuEj8eTte401o9OWCFMcX0E6cb7r49i16m4gvemJddASadj3zLzhoMq0gKO+mL3QyUjTl4VxmYuTcCcHrwABPXPBYRywNh0E8q7nD0nNMhhwDAbODH1KRB4NVRSi96AJ9l/b0wSA4t1SydmwQWrEm60brmqm6kil7nY/KqpqS5u6bWLyu/UYdpQ==',s:[0xba569cac46,0x01ffe87b08],}})();</script>
+
 </body>
 </html>

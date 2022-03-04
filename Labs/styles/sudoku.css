@@ -24,6 +24,14 @@ td{
     width: 50px;
 }
 
+td:first-child{
+    border-left: 2px solid black;
+}
+
+td:nth-child(3n){
+    border-right: 2px solid black;
+}
+
 th{
     height: 50px;
     width: 50px;
@@ -55,19 +63,15 @@ th{
 }
 
 .boldRow{
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
 }
 
 .topRow{
-    border-top: 3px solid black;
+    border-top: 2px solid black;
 }
 
 .boldCol{
-    border-right: 3px solid black;
-}
-
-.leftCol{
-    border-left: 3px solid black;
+    border-right: 2px solid black;
 }
 
 .user-input{
