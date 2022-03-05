@@ -25,11 +25,11 @@ $(document).ready(function() {
     function sameColumn(x1, y1, x2, y2) {
         return x1 == x2;
     }
-        var cellID;
+        
         var lastMove; 
         let board = $("#board");
         for(y=0; y<9; y++){
-            let tr = $("<tr>");;
+            let tr = $("<tr>");
             for(x=0; x<9; x++){
                 let td = $("<td>");
                 if(boardValues[y][x] == -1){
@@ -51,24 +51,24 @@ $(document).ready(function() {
         function boardClick(){
             $(this).text(paletteValue)
             lastMove = this;
-            let cellX = $(this).attr('r');
-            let cellY = $(this).attr('c');  
+            let cellY = $(this).attr('r');
+            let cellX = $(this).attr('c');  
  
             $("#board tr").each(function(){
                 $('td', this).each(function(){
                     let cell = $(this)
                     y = cell.attr('r');
                     x = cell.attr('c'); 
-                    if(cellX != y || cellY != x){
-                        if(paletteValue == cell.text() && sameRow(cellX, cellY, y, x)){
+                    if(cellY != y || cellX != x){
+                        if(paletteValue == cell.text() && sameRow(cellX, cellY, x, y)){
                             err.push(cell)
                             cell.addClass('error'); 
                         }
-                        else if(paletteValue == cell.text() && sameColumn(cellX, cellY, y, x)){
+                        else if(paletteValue == cell.text() && sameColumn(cellX, cellY, x, y)){
                             err.push(cell)
                             cell.addClass('error');
                         }
-                        else if(paletteValue == cell.text() && sameBlock(cellX, cellY, y, x)){
+                        else if(paletteValue == cell.text() && sameBlock(cellX, cellY, x, y)){
                             err.push(cell)
                             cell.addClass('error');
                         }
