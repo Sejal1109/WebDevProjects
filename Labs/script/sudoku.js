@@ -22,7 +22,7 @@ $(document).ready(function() {
         return y1 == y2;
     }
     
-    function sameColumn(x1, x2) {
+    function sameColumn(x1, y1, x2, y2) {
         return x1 == x2;
     }
         var cellID;
@@ -52,14 +52,25 @@ $(document).ready(function() {
             lastMove = this;
             let cellX = $(this).attr('r');
             let cellY = $(this).attr('c');  
-            for(y=0; y<9; y++){
-                for(x=0; x<9; x++){
-                    if(paletteValue == $(this).text() && sameRow(cellX, cellY, y, x)){
-                        $(this).addClass('error').siblings.removeClass('error');
+ 
+            $("#board tr").each(function(){
+                $('td', this).each(function(){
+                    let cell = $(this)
+                    y = cell.attr('r');
+                    x = cell.attr('c'); 
+                    console.log(cell.text())
+                    if(paletteValue == cell.text() && sameRow(cellX, cellY, y, x)){
+                            $(this).addClass('error').siblings().removeClass('error');
+                        }
+                    if(paletteValue == cell.text() && sameColumn(cellX, cellY, y, x)){
+                            $(this).addClass('error').siblings().removeClass('error');
+                        }
+                    if(paletteValue == cell.text() && sameBlock(cellX, cellY, y, x)){
+                        $(this).addClass('error').siblings().removeClass('error');
                     }
-                }
+                    })
+                })
             }
-        }
         
         let palette = $("#palette")
         let tr = $("<tr>");
