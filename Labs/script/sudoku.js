@@ -47,6 +47,7 @@ $(document).ready(function() {
             }
             board.append(tr)
         }
+        let err = []
         function boardClick(){
             $(this).text(paletteValue)
             lastMove = this;
@@ -58,16 +59,21 @@ $(document).ready(function() {
                     let cell = $(this)
                     y = cell.attr('r');
                     x = cell.attr('c'); 
-                    console.log(cell.text())
-                    if(paletteValue == cell.text() && sameRow(cellX, cellY, y, x)){
-                            $(this).addClass('error').siblings().removeClass('error');
+                    if(cellX != y || cellY != x){
+                        if(paletteValue == cell.text() && sameRow(cellX, cellY, y, x)){
+                            err.push(cell)
+                            cell.addClass('error'); 
                         }
-                    if(paletteValue == cell.text() && sameColumn(cellX, cellY, y, x)){
-                            $(this).addClass('error').siblings().removeClass('error');
+                        else if(paletteValue == cell.text() && sameColumn(cellX, cellY, y, x)){
+                            err.push(cell)
+                            cell.addClass('error');
                         }
-                    if(paletteValue == cell.text() && sameBlock(cellX, cellY, y, x)){
-                        $(this).addClass('error').siblings().removeClass('error');
+                        else if(paletteValue == cell.text() && sameBlock(cellX, cellY, y, x)){
+                            err.push(cell)
+                            cell.addClass('error');
+                        }
                     }
+                    
                     })
                 })
             }
@@ -96,6 +102,10 @@ $(document).ready(function() {
         function paletteClick(){
             if(this.id == "09"){
                 lastMove.innerHTML = ' ';
+                for(i=0; i<err.length; i++){
+                    err[i].removeClass('error');
+                }
+                console.log(err);
                 $(this).addClass('active').siblings().removeClass('active')
             }
             else{
