@@ -24,6 +24,9 @@ td{
     width: 50px;
 }
 
+tr:nth-child(3n){
+    border-bottom: 2px solid black;
+}
 td:first-child{
     border-left: 2px solid black;
 }
@@ -36,6 +39,9 @@ th{
     height: 50px;
     width: 50px;
 }
+tr:first-child{
+    border-top: 2px solid black;
+}
 
 #board, td{
     text-align: center;
@@ -43,14 +49,14 @@ th{
     padding: 10px;
     font-weight: bold;
     border: 0.5px solid gray;
-    border-collapse: collapse;
-    
+    border-collapse: collapse;   
 }
 
 #palette, th{
+    table-layout: fixed;
     text-align: center;
     padding: 10px;
-    border: 0.5px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
 }
 
@@ -62,22 +68,15 @@ th{
     background-color: #f5dd90;
 }
 
-.boldRow{
-    border-bottom: 2px solid black;
-}
-
-.topRow{
-    border-top: 2px solid black;
-}
-
-.boldCol{
-    border-right: 2px solid black;
-}
-
 .user-input{
     background-color: #f2f2f2;
 }
-
+.current{
+    background-color: aquamarine;
+}
+th.active{
+    background-color: #f5dd90
+}
 .error{
     background-color: #f76c5e;
 }
