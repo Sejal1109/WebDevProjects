@@ -1,0 +1,37 @@
+#table{
+    margin-top: 30px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 20px;  
+}
+
+td{
+    height: 40px;
+    width: 150px;
+}
+
+td:first-child{
+    background-color: #d0d0d0;
+    font-weight: bolder;
+}
+
+th{
+    height: 40px;
+    width: 150px;
+}
+
+#table, td, th{
+    border: 1px solid black;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}
+
+thead tr{
+    background-color: #d0d0d0;
+}
+
+.selected{
+    background-color: #e0e0ff;
+}
+
+

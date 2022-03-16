@@ -27,6 +27,7 @@ $(document).ready(function() {
     }
         
         var lastMove; 
+        var allMoves = [];
         let board = $("#board");
         for(y=0; y<9; y++){
             let tr = $("<tr>");
@@ -50,7 +51,8 @@ $(document).ready(function() {
         let err = []
         function boardClick(){
             $(this).text(paletteValue)
-            lastMove = this;
+            allMoves.push(this);
+
             let cellY = $(this).attr('r');
             let cellX = $(this).attr('c');  
  
@@ -101,11 +103,15 @@ $(document).ready(function() {
         var paletteValue = ''
         function paletteClick(){
             if(this.id == "09"){
-                lastMove.innerHTML = ' ';
+                var last = allMoves.length - 1
+                if(last >= 0){
+                    allMoves[last].innerHTML = ' '
+                    allMoves.pop()
+                }
+                //lastMove.innerHTML = ' ';
                 for(i=0; i<err.length; i++){
                     err[i].removeClass('error');
                 }
-                console.log(err);
                 $(this).addClass('active').siblings().removeClass('active')
             }
             else{
