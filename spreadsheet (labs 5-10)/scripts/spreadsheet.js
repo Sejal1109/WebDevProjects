@@ -2,8 +2,48 @@ $(document).ready(function(){
     
     var grades =[]
     var i =0;
-    
-    counter = 0;
+
+    let table = $('#table')
+    $.ajax({
+        type: 'GET',
+        url: 'grades.csv',
+        datatype: 'text',
+        success: function(response){
+            let rows = response.split('\n')
+            let thead = $('<thead>')
+            let tr = $('<tr>')
+            let headings = rows[0].split(',')
+            for(i=0; i<headings.length; i++){
+                let th = $('<th>')
+                th.text(headings[i])
+                tr.append(th)
+            }
+            thead.append(tr)
+            table.append(thead)
+            let tbody = $('<tbody>')
+            for(i=1;i<rows.length;i++){
+                let tr = $('<tr>')
+                let data = rows[i].split(',')
+                for(j=0; j<data.length; j++){
+                    if(j==0){
+                        let th = $('<th>')
+                        th.text(data[j])
+                        tr.append(th)
+                    }
+                    else{
+                        let td = $('<td>')
+                        td.text(data[j])
+                        tr.append(td)
+                    }
+                    tbody.append(tr)
+                    table.append(tbody)
+                }
+
+            }
+        }
+        
+    })
+
     let col = $('thead tr:first-child th')
     col.click(function(){
         let colIndex = $(this).index()
@@ -21,7 +61,6 @@ $(document).ready(function(){
     td.click(function(){
         deselectAll();
         let cell = $(this);
-        cell.toggleClass('selected');
         var text = cell.text();
         cell.html("<input type='text' />");
         console.log(text)
