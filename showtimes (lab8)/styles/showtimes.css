@@ -1,0 +1,115 @@
+.navbar-brand small {
+    display: block;
+    font-size: 15px;
+    font-weight: normal !important;
+    white-space: normal;
+    position: absolute;
+}
+.navbar-custom {
+    height: 100px;
+}
+.navbar-brand{
+    color: white;
+    font-weight: bolder;
+}
+.navbar a{
+    padding: 20px;
+    padding-top: 0px;
+    pointer-events: none;
+}
+#bar{
+    margin-bottom: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#movie{
+    padding-left: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#MovieForm label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 15%;
+    display: block;
+    margin-top: 10px;
+    box-sizing: border-box;
+    text-align: left;
+}
+#MovieForm input{
+    width: 30%;
+    padding: 12px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#MovieForm select{
+    width: 30%;
+    padding: 12px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#MovieForm button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: palevioletred;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 30%;
+}
+
+p{
+    margin-left: 20px;
+    font-family: Arial, Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+}
+#showtimes{
+   margin-top: 50px;
+   margin-left: 30px;
+}
+#showtimes td{
+    padding: 1rem;
+    vertical-align: top;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#showtimes tr{
+    border-bottom: 1px solid pink;
+}
+.row {
+    display: flex;
+}
+  
+.column {
+    flex: 50%;
+}
+
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 25%;
+    height: 30%;
+}
+
+
+#info label{
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    width: 150px;
+    text-align: left;
+}
+#info input{
+    padding: 5px;
+    border: 1px solid grey;
+    width: 70%;
+}
+
